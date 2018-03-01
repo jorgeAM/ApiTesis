@@ -1,0 +1,20 @@
+{
+  "name": "face",
+  "version": "0.0.1",
+  "description": "prueba reconocer rostro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "haar",
+    "asm",
+    "tesis"
+  ],
+  "author": "L3M",
+  "license": "ISC",
+  "dependencies": {
+    "face-recognition": "^0.6.0",
+    "opencv4nodejs": "^3.1.0"
+  }
+}
