@@ -1,18 +1,15 @@
-const path = require('path');
-const fs = require('fs');
 const fr = require('face-recognition');
-
-//CREAR DETECTOR
-const detector = fr.FaceDetector();
-
-//CARGAR IMAGENES
-const image1 = fr.loadImage('./img/l3m.jpg');
-console.log('detectando rostros...');
-Promise.all(detector.detectFaces(image1))
-.then(l3mFaces => {
-  //MOSTRAR IMAGENE
-  const win = new fr.ImageWindow();
-  win.setImage(fr.tileImages(l3mFaces));
-  fr.hitEnterToContinue();
-})
-.catch(err => console.log(err));
+const image = fr.loadImage('img/l3m.jpg');
+const detector = fr.AsyncFaceDetector();
+const win = new fr.ImageWindow();
+detector.locateFaces(image)
+  .then((faceRectangles) => {
+    win.setImage(image);
+    for (var i = 0; i < faceRectangles.length; i++) {
+      win.addOverlay(faceRectangles[i].rect);
+    }
+    fr.hitEnterToContinue();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
