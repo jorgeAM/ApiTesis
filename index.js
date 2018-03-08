@@ -14,7 +14,7 @@ const getFaceImage = (grayImg) => {
 		throw new Error('No se ha podido detectar ningun rostro');
 	}
 	return grayImg.getRegion(faceRects[0]);
-};
+}; 
 io.on('connection', (socket) => {
     socket.on('imagen', function(imagen64){
     	console.log("Llego la imagen");
