@@ -14,7 +14,9 @@
   "author": "L3M",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
     "face-recognition": "^0.6.0",
-    "opencv4nodejs": "^3.1.0"
+    "opencv4nodejs": "^3.1.0",
+    "socket.io": "^2.0.4"
   }
 }
